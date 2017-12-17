@@ -448,11 +448,11 @@ int buttonDetection() {
 }
 
 void openBox () {
-    myservo.write(90);
+    myservo.write(155);
 }
 
 void closeBox () {
-    myservo.write(0);
+    myservo.write(60);
 }
 
 int displayQuestionLCD(String s) {
@@ -822,8 +822,9 @@ void setup() {
   Serial.begin(9600);
   lcd.print("I'm Alive!");
   myservo.attach(6);
+  myservo.write(60); // set pos locked
   espPowerOff();
-  //triviaIntro(); //disable for debugging
+  triviaIntro(); //disable for debugging
 }
 
 void loop() {
